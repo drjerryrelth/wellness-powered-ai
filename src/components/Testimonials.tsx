@@ -114,12 +114,12 @@ const Testimonials = () => {
         <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10,000+</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
               <div className="text-text-medical">Healthcare Providers</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">2M+</div>
-              <div className="text-text-medical">Patients Helped</div>
+              <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">25K+</div>
+              <div className="text-text-medical">Patients Supported</div>
             </div>
             <div>
               <div className="text-3xl md:text-4xl font-bold text-accent mb-2">89%</div>

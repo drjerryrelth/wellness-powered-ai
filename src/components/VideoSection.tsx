@@ -19,15 +19,15 @@ const VideoSection = () => {
             {/* Video Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-primary">98%</div>
+                <div className="text-2xl font-bold text-primary">92%</div>
                 <div className="text-sm text-muted-foreground">Provider Satisfaction</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-secondary">45%</div>
+                <div className="text-2xl font-bold text-secondary">35%</div>
                 <div className="text-sm text-muted-foreground">Better Outcomes</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-accent">10k+</div>
+                <div className="text-2xl font-bold text-accent">2K+</div>
                 <div className="text-sm text-muted-foreground">Active Users</div>
               </div>
             </div>

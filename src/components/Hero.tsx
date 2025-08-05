@@ -29,7 +29,7 @@ const Hero = () => {
               </Badge>
               <Badge className="bg-accent-light text-accent border-accent/20 flex items-center gap-2">
                 <Award className="w-4 h-4" />
-                Trusted by 10,000+ Providers
+                Trusted by Healthcare Professionals
               </Badge>
             </div>
 
@@ -62,11 +62,11 @@ const Hero = () => {
 
             {/* Social Proof */}
             <div className="pt-8">
-              <p className="text-sm text-text-medical mb-4">Trusted by leading healthcare providers:</p>
+              <p className="text-sm text-text-medical mb-4">Trusted by healthcare professionals nationwide:</p>
               <div className="flex items-center space-x-6 opacity-60">
-                <div className="text-lg font-semibold">Mayo Clinic Partners</div>
-                <div className="text-lg font-semibold">Kaiser Permanente</div>
-                <div className="text-lg font-semibold">Cleveland Clinic</div>
+                <div className="text-lg font-semibold">Primary Care Physicians</div>
+                <div className="text-lg font-semibold">Registered Dietitians</div>
+                <div className="text-lg font-semibold">Wellness Centers</div>
               </div>
             </div>
           </div>
