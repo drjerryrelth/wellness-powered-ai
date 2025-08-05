@@ -132,8 +132,8 @@ const Features = () => {
               Ready to Transform Your Practice?
             </h3>
             <p className="text-text-medical mb-6">
-              Join thousands of healthcare providers already using Client Health Tracker
-              to improve patient outcomes and grow their practice.
+              Be among the first healthcare providers to experience our revolutionary 
+              AI-powered nutrition coaching platform and transform your practice.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-3 bg-gradient-hero text-white rounded-lg font-semibold hover:scale-105 transition-transform shadow-elegant hover:shadow-glow">

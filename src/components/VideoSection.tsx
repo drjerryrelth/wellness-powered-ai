@@ -19,16 +19,16 @@ const VideoSection = () => {
             {/* Video Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-primary">92%</div>
-                <div className="text-sm text-muted-foreground">Provider Satisfaction</div>
+                <div className="text-2xl font-bold text-primary">🚀</div>
+                <div className="text-sm text-muted-foreground">Launching Soon</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-secondary">35%</div>
-                <div className="text-sm text-muted-foreground">Better Outcomes</div>
+                <div className="text-2xl font-bold text-secondary">✨</div>
+                <div className="text-sm text-muted-foreground">Fresh & Modern</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-accent">2K+</div>
-                <div className="text-sm text-muted-foreground">Active Users</div>
+                <div className="text-2xl font-bold text-accent">💡</div>
+                <div className="text-sm text-muted-foreground">AI-Powered</div>
               </div>
             </div>
           </div>

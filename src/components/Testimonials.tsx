@@ -114,20 +114,20 @@ const Testimonials = () => {
         <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
-              <div className="text-text-medical">Healthcare Providers</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">🚀</div>
+              <div className="text-text-medical">Now Launching</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">25K+</div>
-              <div className="text-text-medical">Patients Supported</div>
+              <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">✨</div>
+              <div className="text-text-medical">Fresh Platform</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">89%</div>
-              <div className="text-text-medical">Success Rate</div>
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">🎯</div>
+              <div className="text-text-medical">Ready to Scale</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">40%</div>
-              <div className="text-text-medical">Time Saved</div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">💡</div>
+              <div className="text-text-medical">AI-Powered</div>
             </div>
           </div>
         </div>
@@ -138,8 +138,8 @@ const Testimonials = () => {
             Join the Growing Community of Successful Providers
           </h3>
           <p className="text-text-medical mb-8 max-w-2xl mx-auto">
-            Schedule a personalized demo today and see why thousands of healthcare professionals
-            trust Client Health Tracker for their nutrition and weight loss programs.
+            Be among the first to experience our revolutionary AI-powered nutrition coaching platform.
+            Schedule a demo to see how we're transforming healthcare nutrition practices.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-gradient-accent text-white rounded-lg font-semibold hover:scale-105 transition-transform shadow-glow animate-glow">
