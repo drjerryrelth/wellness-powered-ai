@@ -91,7 +91,7 @@ const VideoSection = () => {
             {/* CTA */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="cta" size="lg">
-                Start Your Free Trial
+                Contact Sales
               </Button>
               <Button variant="outline" size="lg">
                 Schedule Personal Demo

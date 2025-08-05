@@ -52,7 +52,7 @@ const Hero = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="cta" size="xl" className="group">
-                Start Free 30-Day Trial
+                Get Started Today
                 <Users className="w-5 h-5 ml-2 group-hover:scale-110 transition-transform" />
               </Button>
               <Button variant="medical" size="xl">

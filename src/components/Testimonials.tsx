@@ -138,12 +138,12 @@ const Testimonials = () => {
             Join the Growing Community of Successful Providers
           </h3>
           <p className="text-text-medical mb-8 max-w-2xl mx-auto">
-            Start your free trial today and see why thousands of healthcare professionals
+            Schedule a personalized demo today and see why thousands of healthcare professionals
             trust Client Health Tracker for their nutrition and weight loss programs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-gradient-accent text-white rounded-lg font-semibold hover:scale-105 transition-transform shadow-glow animate-glow">
-              Start Free 30-Day Trial
+              Contact Sales Team
             </button>
             <button className="px-8 py-4 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors shadow-card">
               Schedule Demo

@@ -137,7 +137,7 @@ const Features = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-3 bg-gradient-hero text-white rounded-lg font-semibold hover:scale-105 transition-transform shadow-elegant hover:shadow-glow">
-                Start Free Trial
+                Contact Sales
               </button>
               <button className="px-8 py-3 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors shadow-card">
                 Schedule Demo

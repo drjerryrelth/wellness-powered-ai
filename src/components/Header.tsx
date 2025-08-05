@@ -39,7 +39,7 @@ const Header = () => {
               Log In
             </Button>
             <Button variant="cta" size="lg">
-              Start Free Trial
+              Schedule Demo
             </Button>
           </div>
 
@@ -78,7 +78,7 @@ const Header = () => {
                 Log In
               </Button>
               <Button variant="cta" size="lg">
-                Start Free Trial
+                Schedule Demo
               </Button>
             </div>
           </div>
