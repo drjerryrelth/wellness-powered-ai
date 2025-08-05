@@ -1,7 +1,7 @@
 import VideoPlayer from "./VideoPlayer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { PlayCircle, Award, TrendingUp } from "lucide-react";
+import { PlayCircle, Award, TrendingUp, Users, Activity, Brain, Heart } from "lucide-react";
 
 const VideoSection = () => {
   return (
@@ -19,15 +19,15 @@ const VideoSection = () => {
             {/* Video Stats */}
             <div className="grid grid-cols-3 gap-4">
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-primary">🚀</div>
-                <div className="text-sm text-muted-foreground">Launching Soon</div>
+                <Users className="w-8 h-8 text-primary mx-auto mb-2" />
+                <div className="text-sm text-muted-foreground">Unlimited Clients & Patients</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-secondary">✨</div>
+                <Activity className="w-8 h-8 text-secondary mx-auto mb-2" />
                 <div className="text-sm text-muted-foreground">Fresh & Modern</div>
               </div>
               <div className="text-center p-4 bg-card rounded-lg border">
-                <div className="text-2xl font-bold text-accent">💡</div>
+                <Brain className="w-8 h-8 text-accent mx-auto mb-2" />
                 <div className="text-sm text-muted-foreground">AI-Powered</div>
               </div>
             </div>

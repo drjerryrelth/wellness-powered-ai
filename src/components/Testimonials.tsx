@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, Users, Activity, Target, Brain } from "lucide-react";
 import doctorImage from "@/assets/testimonial-doctor.jpg";
 import coachImage from "@/assets/wellness-coach.jpg";
 
@@ -114,19 +114,19 @@ const Testimonials = () => {
         <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">🚀</div>
-              <div className="text-text-medical">Now Launching</div>
+              <Users className="w-12 h-12 text-primary mb-3 mx-auto" />
+              <div className="text-text-medical">Unlimited Clients & Patients</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">✨</div>
+              <Activity className="w-12 h-12 text-secondary mb-3 mx-auto" />
               <div className="text-text-medical">Fresh Platform</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">🎯</div>
+              <Target className="w-12 h-12 text-accent mb-3 mx-auto" />
               <div className="text-text-medical">Ready to Scale</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">💡</div>
+              <Brain className="w-12 h-12 text-primary mb-3 mx-auto" />
               <div className="text-text-medical">AI-Powered</div>
             </div>
           </div>
