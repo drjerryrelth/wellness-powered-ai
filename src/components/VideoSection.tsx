@@ -11,6 +11,7 @@ const VideoSection = () => {
           {/* Left Column - Video */}
           <div className="space-y-6">
             <VideoPlayer
+              videoUrl="https://www.youtube.com/embed/IJD77x9BFJ8"
               className="w-full"
               title="See Client Health Tracker in Action"
               description="Watch how healthcare providers are transforming patient care with AI-powered nutrition coaching"
