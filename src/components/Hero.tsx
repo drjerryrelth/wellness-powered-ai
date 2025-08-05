@@ -63,10 +63,13 @@ const Hero = () => {
             {/* Social Proof */}
             <div className="pt-8">
               <p className="text-sm text-text-medical mb-4">Trusted by healthcare professionals nationwide:</p>
-              <div className="flex items-center space-x-6 opacity-60">
-                <div className="text-lg font-semibold">Primary Care Physicians</div>
-                <div className="text-lg font-semibold">Registered Dietitians</div>
-                <div className="text-lg font-semibold">Wellness Centers</div>
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-2 opacity-60">
+                <div className="text-sm md:text-base font-semibold">Primary Care Physicians</div>
+                <div className="text-sm md:text-base font-semibold">Registered Dietitians</div>
+                <div className="text-sm md:text-base font-semibold">Wellness Centers</div>
+                <div className="text-sm md:text-base font-semibold">Chiropractors</div>
+                <div className="text-sm md:text-base font-semibold">Med Spas</div>
+                <div className="text-sm md:text-base font-semibold">Health Coaches</div>
               </div>
             </div>
           </div>
