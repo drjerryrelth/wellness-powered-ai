@@ -29,14 +29,21 @@ const VideoPlayer = ({
   const [showPlaceholder, setShowPlaceholder] = useState(!videoUrl);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const togglePlay = () => {
+  const togglePlay = async () => {
     if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
+      try {
+        if (isPlaying) {
+          videoRef.current.pause();
+          setIsPlaying(false);
+        } else {
+          await videoRef.current.play();
+          setIsPlaying(true);
+        }
+      } catch (error) {
+        console.error('Video play failed:', error);
+        // If play fails, ensure we're not stuck in playing state
+        setIsPlaying(false);
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
