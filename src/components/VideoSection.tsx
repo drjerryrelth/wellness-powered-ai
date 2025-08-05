@@ -11,7 +11,7 @@ const VideoSection = () => {
           {/* Left Column - Video */}
           <div className="space-y-6">
             <VideoPlayer
-              videoUrl="https://www.youtube.com/embed/IJD77x9BFJ8"
+              videoUrl="https://www.youtube.com/embed/IJD77x9BFJ8?rel=0&modestbranding=1&showinfo=0&controls=1&autoplay=0&loop=1&playlist=IJD77x9BFJ8"
               posterImage="/lovable-uploads/d36529e3-2ce9-4d76-8e5e-f1179622a22d.png"
               className="w-full"
               title="See Client Health Tracker in Action"
