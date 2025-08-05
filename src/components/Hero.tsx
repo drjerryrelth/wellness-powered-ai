@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Shield, Brain, Users, Award } from "lucide-react";
+import { Shield, Brain, Users, Award, Play } from "lucide-react";
 import heroImage from "@/assets/hero-healthcare.jpg";
+import VideoPlayer from "./VideoPlayer";
 
 const Hero = () => {
   return (
@@ -70,14 +71,40 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Hero Image */}
+          {/* Right Column - Hero Image/Video */}
           <div className="relative animate-slide-up">
+            {/* Option 1: Video Player (uncomment when video URL is available) */}
+            {/* <VideoPlayer 
+              className="w-full"
+              posterImage={heroImage}
+              title="Client Health Tracker Demo"
+              description="See our platform in action"
+              autoplay={true}
+              muted={true}
+            /> */}
+            
+            {/* Option 2: Static Image with Video CTA (current default) */}
             <div className="relative">
               <img
                 src={heroImage}
                 alt="Healthcare provider using Client Health Tracker"
                 className="w-full h-auto rounded-2xl shadow-elegant"
               />
+              
+              {/* Video Play Button Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="w-16 h-16 rounded-full bg-white/90 hover:bg-white text-primary hover:text-primary shadow-lg opacity-90 hover:opacity-100 transition-all"
+                  onClick={() => {
+                    // Scroll to video section
+                    document.querySelector('#video-section')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
+                  <Play className="w-6 h-6 ml-1" />
+                </Button>
+              </div>
               
               {/* Floating cards */}
               <div className="absolute -top-6 -left-6 bg-white p-4 rounded-xl shadow-card animate-glow">
