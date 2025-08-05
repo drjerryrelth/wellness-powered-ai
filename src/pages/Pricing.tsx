@@ -22,7 +22,7 @@ const Pricing = () => {
         "Basic reporting"
       ],
       badge: null,
-      buttonText: "Start Free Trial",
+      buttonText: "Schedule Demo",
       buttonVariant: "outline" as const
     },
     {
