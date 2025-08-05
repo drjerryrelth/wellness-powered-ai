@@ -86,6 +86,23 @@ const VideoPlayer = ({
     );
   }
 
+  // Check if URL is YouTube embed
+  const isYouTubeEmbed = videoUrl.includes('youtube.com/embed') || videoUrl.includes('youtu.be');
+
+  if (isYouTubeEmbed) {
+    return (
+      <div className={cn("relative rounded-2xl overflow-hidden shadow-elegant", className)}>
+        <iframe
+          src={videoUrl}
+          className="w-full aspect-video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          title={title}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className={cn("relative rounded-2xl overflow-hidden shadow-elegant", className)}>
       <video
