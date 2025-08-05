@@ -1,0 +1,158 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Star, Quote } from "lucide-react";
+import doctorImage from "@/assets/testimonial-doctor.jpg";
+import coachImage from "@/assets/wellness-coach.jpg";
+
+const Testimonials = () => {
+  const testimonials = [
+    {
+      name: "Dr. Sarah Martinez",
+      role: "Family Medicine Physician",
+      practice: "Pacific Health Center",
+      image: doctorImage,
+      rating: 5,
+      quote: "Client Health Tracker has revolutionized how I approach nutrition counseling. The AI-powered insights save me hours each week, and my patients are seeing remarkable results. The HIPAA compliance gives me complete peace of mind.",
+      results: "40% reduction in consultation time"
+    },
+    {
+      name: "Michael Chen",
+      role: "Certified Wellness Coach",
+      practice: "Optimal Living Wellness",
+      image: coachImage,
+      rating: 5,
+      quote: "The pre-built templates are incredible - it's like having a team of nutrition experts at my fingertips. My clients love the 24/7 AI coaching, and I've been able to scale my practice to help 3x more people.",
+      results: "300% increase in client capacity"
+    },
+    {
+      name: "Dr. Jennifer Wong",
+      role: "Endocrinologist",
+      practice: "Metro Diabetes Center",
+      image: doctorImage,
+      rating: 5,
+      quote: "The food allergy and medical condition tracking is phenomenal. It automatically flags potential issues and provides safe meal recommendations. This level of personalization was impossible before.",
+      results: "95% patient satisfaction rate"
+    },
+    {
+      name: "Lisa Thompson",
+      role: "Registered Dietitian",
+      practice: "Nutrition First Clinic",
+      image: coachImage,
+      rating: 5,
+      quote: "The analytics dashboard provides insights I never had before. I can track patient progress in real-time and adjust protocols immediately. My success rates have improved dramatically.",
+      results: "85% patient goal achievement"
+    }
+  ];
+
+  return (
+    <section id="testimonials" className="py-20 bg-gradient-medical">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
+          <Badge className="bg-secondary-light text-secondary border-secondary/20 mb-4">
+            Success Stories
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-text-hero mb-6">
+            Trusted by Healthcare
+            <span className="block bg-gradient-hero bg-clip-text text-transparent">
+              Professionals Worldwide
+            </span>
+          </h2>
+          <p className="text-xl text-text-medical">
+            See how Client Health Tracker is transforming practices and improving patient outcomes
+            across the healthcare industry.
+          </p>
+        </div>
+
+        {/* Testimonials Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {testimonials.map((testimonial, index) => (
+            <Card 
+              key={index}
+              className="group hover:shadow-elegant transition-all duration-300 border-border/50 hover:border-primary/20 bg-card/80 backdrop-blur-sm"
+            >
+              <CardContent className="p-8">
+                {/* Quote Icon */}
+                <div className="flex justify-between items-start mb-6">
+                  <Quote className="w-8 h-8 text-primary/30" />
+                  <div className="flex items-center space-x-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Quote */}
+                <blockquote className="text-text-medical leading-relaxed mb-6 text-lg">
+                  "{testimonial.quote}"
+                </blockquote>
+
+                {/* Results Badge */}
+                <Badge className="bg-accent-light text-accent border-accent/20 mb-6">
+                  {testimonial.results}
+                </Badge>
+
+                {/* Author Info */}
+                <div className="flex items-center space-x-4">
+                  <img 
+                    src={testimonial.image} 
+                    alt={testimonial.name}
+                    className="w-16 h-16 rounded-full object-cover shadow-card"
+                  />
+                  <div>
+                    <div className="font-semibold text-text-hero">{testimonial.name}</div>
+                    <div className="text-text-medical">{testimonial.role}</div>
+                    <div className="text-primary text-sm font-medium">{testimonial.practice}</div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Stats Section */}
+        <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-8 border border-border/50">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">10,000+</div>
+              <div className="text-text-medical">Healthcare Providers</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-secondary mb-2">2M+</div>
+              <div className="text-text-medical">Patients Helped</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-accent mb-2">89%</div>
+              <div className="text-text-medical">Success Rate</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold text-primary mb-2">40%</div>
+              <div className="text-text-medical">Time Saved</div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <h3 className="text-2xl font-bold text-text-hero mb-4">
+            Join the Growing Community of Successful Providers
+          </h3>
+          <p className="text-text-medical mb-8 max-w-2xl mx-auto">
+            Start your free trial today and see why thousands of healthcare professionals
+            trust Client Health Tracker for their nutrition and weight loss programs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="px-8 py-4 bg-gradient-accent text-white rounded-lg font-semibold hover:scale-105 transition-transform shadow-glow animate-glow">
+              Start Free 30-Day Trial
+            </button>
+            <button className="px-8 py-4 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors shadow-card">
+              Schedule Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Testimonials;
