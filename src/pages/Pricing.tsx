@@ -37,8 +37,6 @@ const Pricing = () => {
         "Advanced AI-driven nutrition coaching and analysis",
         "Priority support",
         "Advanced reporting and analytics",
-        "Custom branding",
-        "API access",
         "Let us do the heavy lifting for you!"
       ],
       badge: "Most Popular",
