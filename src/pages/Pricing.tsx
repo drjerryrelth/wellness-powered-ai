@@ -16,6 +16,7 @@ const Pricing = () => {
       features: [
         "Up to 20 clients or patients",
         "Standard AI food analysis",
+        "30 Micronutrients tracked, not just Macros",
         "Basic nutrition coaching tools",
         "Email support",
         "Mobile app access",
@@ -35,6 +36,7 @@ const Pricing = () => {
         "Unlimited clients or patients",
         "Unlimited coaches within your organization",
         "Advanced AI-driven nutrition coaching and analysis",
+        "30 Micronutrients tracked, not just Macros",
         "Priority support",
         "Advanced reporting and analytics",
         "Let us do the heavy lifting for you!"
