@@ -75,15 +75,19 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary-glow" />
-                <span className="text-gray-300">support@clienthealthtracker.com</span>
+                <a href="mailto:support@reply.practicenaturals.com" className="text-gray-300 hover:text-primary-glow transition-colors">
+                  support@reply.practicenaturals.com
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary-glow" />
-                <span className="text-gray-300">1-800-HEALTH-1</span>
+                <a href="tel:580-203-0778" className="text-gray-300 hover:text-primary-glow transition-colors">
+                  580-203-0778
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 text-primary-glow" />
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className="text-gray-300">Austin, TX</span>
               </div>
             </div>
             
