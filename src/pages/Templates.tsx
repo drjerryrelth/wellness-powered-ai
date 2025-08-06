@@ -53,64 +53,17 @@ const Templates = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/20 dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20">
       <Header />
       
-      {/* Premium Header Section */}
-      <div className="relative bg-gradient-to-r from-indigo-600 via-purple-700 to-pink-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-20" style={{backgroundImage: "radial-gradient(circle at 50% 50%, white 2px, transparent 2px)", backgroundSize: "60px 60px"}}></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                  <Activity className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    Enterprise Templates
-                  </Badge>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl font-display font-bold tracking-tight">
-                  Pre-Built <span className="text-purple-200">Templates</span>
-                </h1>
-                <p className="text-xl text-purple-100 font-medium leading-relaxed">
-                  We have pre-built templates for many popular programs and you can also quickly and easily create your own to fit your business model.
-                </p>
-                <p className="text-purple-200 flex items-center gap-2">
-                  <Heart className="w-4 h-4" />
-                  Enterprise-grade solutions • Custom template builder
-                </p>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-white text-purple-700 hover:bg-purple-50 shadow-lg font-semibold">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Schedule Demo
-                </Button>
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                  <Zap className="w-4 h-4 mr-2" />
-                  Create Custom Template
-                </Button>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-3xl blur-3xl"></div>
-              <img 
-                src={nutritionDashboard} 
-                alt="Template Management Interface" 
-                className="relative rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm"
-              />
-            </div>
+      {/* Compact Header with Background Color */}
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <h1 className="text-3xl font-display font-bold">Pre-Built Templates</h1>
+            <p className="text-lg text-purple-100 mt-2">Enterprise-grade solutions • Custom template builder</p>
           </div>
         </div>
       </div>
       
-      <main className="py-16 -mt-12 relative z-10">
+      <main className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Templates Grid - Premium Design */}

@@ -71,53 +71,18 @@ const Pricing = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/20 dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20">
       <Header />
       
-      {/* Premium Header Section */}
-      <div className="relative bg-gradient-to-r from-emerald-600 via-teal-700 to-cyan-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-20" style={{backgroundImage: "radial-gradient(circle at 50% 50%, white 2px, transparent 2px)", backgroundSize: "60px 60px"}}></div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-8">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                  <DollarSign className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    Enterprise Pricing
-                  </Badge>
-                </div>
-              </div>
-              
-              <div className="space-y-4">
-                <h1 className="text-5xl md:text-6xl font-display font-bold tracking-tight">
-                  Simple, <span className="text-emerald-200">Transparent</span> Pricing
-                </h1>
-                <p className="text-xl text-emerald-100 font-medium leading-relaxed">
-                  Choose the plan that fits your practice. Scale as you grow with unlimited access to our advanced AI-powered nutrition coaching platform.
-                </p>
-                <p className="text-emerald-200 flex items-center gap-2">
-                  <Heart className="w-4 h-4" />
-                  No setup fees • Cancel anytime • 14-day free trial
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-cyan-400/20 rounded-3xl blur-3xl"></div>
-              <img 
-                src={hipaaBoard} 
-                alt="Pricing Dashboard Interface" 
-                className="relative rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm"
-              />
-            </div>
+      {/* Compact Header with Background Color */}
+      <div className="bg-gradient-to-r from-emerald-600 to-cyan-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <h1 className="text-3xl font-display font-bold">Simple, Transparent Pricing</h1>
+            <p className="text-lg text-emerald-100 mt-2">Choose the plan that fits your practice</p>
+            <p className="text-emerald-200 text-sm mt-1">No setup fees • Cancel anytime • 14-day free trial</p>
           </div>
         </div>
       </div>
       
-      <main className="py-16 -mt-12 relative z-10">
+      <main className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* Pricing Cards - Premium Design */}

@@ -35,53 +35,18 @@ export default function Progress() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/20 dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20">
-      {/* Premium Header Section */}
-      <div className="relative bg-gradient-to-r from-purple-600 via-indigo-700 to-blue-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-20" style={{backgroundImage: "radial-gradient(circle at 50% 50%, white 2px, transparent 2px)", backgroundSize: "60px 60px"}}></div>
-        
-        <div className="relative container mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                  <Activity className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    Progress Analytics
-                  </Badge>
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight">
-                  Welcome back, <span className="text-purple-200">{mockData.client.name}</span>! 👋
-                </h1>
-                <p className="text-xl text-purple-100 font-medium">
-                  Your comprehensive wellness journey tracking
-                </p>
-                <p className="text-purple-200 flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  Started {mockData.client.startDate} • {mockData.client.daysActive} days active
-                </p>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-3xl blur-3xl"></div>
-              <img 
-                src={progressDashboard} 
-                alt="Advanced Progress Dashboard" 
-                className="relative rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm"
-              />
-            </div>
+      {/* Compact Header with Background Color */}
+      <div className="bg-gradient-to-r from-purple-600 to-blue-700 text-white">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center">
+            <h1 className="text-3xl font-display font-bold">Welcome back, {mockData.client.name}! 👋</h1>
+            <p className="text-lg text-purple-100 mt-2">Your comprehensive wellness journey tracking</p>
+            <p className="text-purple-200 text-sm mt-1">Started {mockData.client.startDate} • {mockData.client.daysActive} days active</p>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto p-6 space-y-8 -mt-12 relative z-10">
+      <div className="container mx-auto p-4 space-y-6">
 
         {/* Key Metrics - Premium Circular Progress Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
