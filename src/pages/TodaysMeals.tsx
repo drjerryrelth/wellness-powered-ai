@@ -2,7 +2,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Clock, CheckCircle, Plus, AlertCircle, TrendingUp } from "lucide-react";
+import { Clock, CheckCircle, Plus, AlertCircle, TrendingUp, Sparkles } from "lucide-react";
+import nutritionDashboard from "@/assets/nutrition-dashboard.jpg";
+import aiAnalysis from "@/assets/ai-food-analysis.jpg";
 
 // Mock meal data - replace with real API calls
 const mockMeals = [
@@ -116,9 +118,9 @@ const aiSummary = {
 export default function TodaysMeals() {
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "excellent": return "text-green-600 bg-green-50 border-green-200";
-      case "good": return "text-blue-600 bg-blue-50 border-blue-200";
-      case "needs-work": return "text-orange-600 bg-orange-50 border-orange-200";
+      case "excellent": return "text-green-600 bg-gradient-to-r from-green-50 to-emerald-50 border-green-200 dark:from-green-950/20 dark:to-emerald-950/20";
+      case "good": return "text-blue-600 bg-gradient-to-r from-blue-50 to-sky-50 border-blue-200 dark:from-blue-950/20 dark:to-sky-950/20";
+      case "needs-work": return "text-orange-600 bg-gradient-to-r from-orange-50 to-amber-50 border-orange-200 dark:from-orange-950/20 dark:to-amber-950/20";
       default: return "text-gray-600 bg-gray-50 border-gray-200";
     }
   };
@@ -138,33 +140,65 @@ export default function TodaysMeals() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto p-6 space-y-6">
-        {/* Header */}
-        <div className="flex justify-between items-start">
-          <div>
-            <h1 className="text-3xl font-bold">Today's Meals</h1>
-            <p className="text-muted-foreground flex items-center gap-2">
-              <Clock className="w-4 h-4" />
-              Tuesday, March 12, 2024
-            </p>
+      {/* Hero Section with AI Analysis Visual */}
+      <div className="relative bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white">
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative container mx-auto px-6 py-12">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-6 h-6 text-blue-300" />
+                <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+                  AI-Powered Analysis
+                </Badge>
+              </div>
+              <h1 className="text-4xl font-bold">Today's Meal Analysis</h1>
+              <p className="text-xl text-blue-100">
+                Advanced AI instantly analyzes your food choices, providing detailed nutritional insights and personalized coaching recommendations.
+              </p>
+              <div className="flex items-center gap-2 text-blue-200">
+                <Clock className="w-4 h-4" />
+                Tuesday, March 12, 2024
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src={aiAnalysis} 
+                alt="AI Food Analysis Dashboard" 
+                className="rounded-xl shadow-2xl border border-white/20"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-xl"></div>
+            </div>
           </div>
-          <Button>
+        </div>
+      </div>
+
+      <div className="container mx-auto p-6 space-y-6 -mt-8 relative z-10">
+
+        {/* Quick Actions */}
+        <div className="flex justify-end mb-6">
+          <Button size="lg" className="shadow-lg">
             <Plus className="w-4 h-4 mr-2" />
             Add Meal
           </Button>
         </div>
 
         {/* Daily Review Summary */}
-        <Card className={`border-2 ${getStatusColor(aiSummary.overall)}`}>
+        <Card className={`border-2 shadow-xl ${getStatusColor(aiSummary.overall)}`}>
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
-                <span className="text-white text-sm font-bold">AI</span>
+            <CardTitle className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center shadow-lg">
+                <Sparkles className="text-white text-sm" />
               </div>
-              Daily Nutrition Review
-              <Badge variant="outline" className="ml-auto">
-                {aiSummary.compliance}% Compliance
-              </Badge>
+              <div className="flex-1">
+                <div className="flex items-center gap-3">
+                  <span className="text-xl">AI Nutrition Analysis</span>
+                  <Badge variant="outline" className="bg-white/80">
+                    {aiSummary.compliance}% Compliance
+                  </Badge>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">Advanced AI insights for optimal nutrition</p>
+              </div>
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -208,9 +242,12 @@ export default function TodaysMeals() {
         </Card>
 
         {/* Daily Macro Summary */}
-        <Card>
+        <Card className="shadow-lg border-primary/20 bg-gradient-to-r from-white to-blue-50/30 dark:from-gray-900 dark:to-blue-950/30">
           <CardHeader>
-            <CardTitle>Daily Macro Summary</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <div className="w-2 h-8 bg-gradient-to-b from-primary to-blue-600 rounded-full"></div>
+              Daily Macro Summary
+            </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -262,9 +299,15 @@ export default function TodaysMeals() {
         </Card>
 
         {/* Individual Meals */}
-        <div className="grid gap-6">
-          {mockMeals.map((meal) => (
-            <Card key={meal.id} className="hover:shadow-md transition-shadow">
+        <div className="space-y-2 mb-4">
+          <h2 className="text-2xl font-bold flex items-center gap-2">
+            <div className="w-1 h-8 bg-gradient-to-b from-primary to-blue-600 rounded-full"></div>
+            Meal Breakdown
+          </h2>
+          <p className="text-muted-foreground">Detailed analysis of each meal with AI-powered feedback</p>
+        </div>
+        <div className="grid gap-6">{mockMeals.map((meal) => (
+            <Card key={meal.id} className="hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary/50 bg-gradient-to-r from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
               <CardHeader>
                 <div className="flex justify-between items-start">
                   <div>
@@ -318,12 +361,17 @@ export default function TodaysMeals() {
                 </div>
 
                 {/* AI Feedback */}
-                <div className={`p-3 rounded-lg border ${getStatusColor(meal.feedback.status)}`}>
-                  <div className="flex items-start gap-2">
-                    {getStatusIcon(meal.feedback.status)}
-                    <div>
-                      <h5 className="font-medium text-sm">AI Feedback</h5>
-                      <p className="text-sm mt-1">{meal.feedback.message}</p>
+                <div className={`p-4 rounded-xl border shadow-sm ${getStatusColor(meal.feedback.status)}`}>
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center shadow-md flex-shrink-0">
+                      <Sparkles className="w-4 h-4 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h5 className="font-semibold text-sm flex items-center gap-2">
+                        AI Nutrition Feedback
+                        {getStatusIcon(meal.feedback.status)}
+                      </h5>
+                      <p className="text-sm mt-1 leading-relaxed">{meal.feedback.message}</p>
                     </div>
                   </div>
                 </div>
