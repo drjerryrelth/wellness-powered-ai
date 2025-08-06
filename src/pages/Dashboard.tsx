@@ -1,7 +1,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, TrendingDown, Clock, Weight, CheckCircle, BookOpen } from "lucide-react";
+import { TrendingUp, TrendingDown, Clock, Weight, CheckCircle, BookOpen, Heart, Activity, Award, Sparkles } from "lucide-react";
+import nutritionDashboard from "@/assets/nutrition-dashboard.jpg";
 
 // Mock data - replace with real API calls
 const mockData = {
@@ -23,119 +24,204 @@ const mockData = {
 
 export default function Dashboard() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto p-6 space-y-6">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <div>
-            <h1 className="text-3xl font-bold">Welcome back, Sarah! 👋</h1>
-            <p className="text-muted-foreground">Here's your health summary for today</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/20 dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20">
+      {/* Premium Header Section */}
+      <div className="relative bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-white/5 opacity-20" style={{backgroundImage: "radial-gradient(circle at 50% 50%, white 2px, transparent 2px)", backgroundSize: "60px 60px"}}></div>
+        
+        <div className="relative container mx-auto px-6 py-12">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                    <Sparkles className="w-3 h-3 mr-1" />
+                    Enterprise Dashboard
+                  </Badge>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight">
+                  Welcome back, <span className="text-blue-200">Sarah</span>! 👋
+                </h1>
+                <p className="text-xl text-blue-100 font-medium">
+                  Your comprehensive health intelligence platform
+                </p>
+                <p className="text-blue-200 flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  Real-time insights • AI-powered recommendations
+                </p>
+              </div>
+              
+              <div className="flex gap-3">
+                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg font-semibold">
+                  <CheckCircle className="w-4 h-4 mr-2" />
+                  Quick Check-In
+                </Button>
+                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  View Program
+                </Button>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl blur-3xl"></div>
+              <img 
+                src={nutritionDashboard} 
+                alt="Advanced Healthcare Dashboard" 
+                className="relative rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm"
+              />
+            </div>
           </div>
-          <Button>
-            <CheckCircle className="w-4 h-4 mr-2" />
-            Quick Check-In
-          </Button>
         </div>
+      </div>
 
-        {/* Daily Motivation */}
-        <Card className="bg-gradient-to-r from-primary/10 to-primary/5 border-primary/20">
-          <CardContent className="p-6">
-            <div className="flex items-center gap-3">
-              <div className="text-2xl">{mockData.motivation.emoji}</div>
-              <div>
-                <h3 className="font-semibold text-lg">Daily Motivation</h3>
-                <p className="text-muted-foreground">{mockData.motivation.message}</p>
+      <div className="container mx-auto p-6 space-y-8 -mt-12 relative z-10">
+        {/* Daily Motivation - Premium Card */}
+        <Card className="premium-card border-l-4 border-l-blue-500 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/40 dark:to-indigo-950/40">
+          <CardContent className="p-8">
+            <div className="flex items-center gap-4">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
+                <div className="text-3xl">✨</div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-display font-bold text-gray-900 dark:text-white mb-2">Daily Motivation</h3>
+                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">{mockData.motivation.message}</p>
+                <Badge className="mt-3 bg-blue-100 text-blue-700 hover:bg-blue-200 dark:bg-blue-900 dark:text-blue-100">
+                  <Award className="w-3 h-3 mr-1" />
+                  Consistency Streak: 12 days
+                </Badge>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        {/* Latest Stats */}
+        {/* Latest Stats - Premium Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Weight Card */}
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Current Weight</CardTitle>
-              <Weight className="h-4 w-4 text-muted-foreground" />
+          <Card className="premium-card group">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+              <CardTitle className="text-lg font-display font-semibold text-gray-900 dark:text-white">Current Weight</CardTitle>
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all">
+                <Weight className="h-6 w-6 text-white" />
+              </div>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockData.stats.weight.current} lbs</div>
-              <div className="flex items-center gap-1 text-sm">
-                {mockData.stats.weight.trend === "down" ? (
-                  <TrendingDown className="h-4 w-4 text-green-500" />
-                ) : (
-                  <TrendingUp className="h-4 w-4 text-red-500" />
-                )}
-                <span className={mockData.stats.weight.trend === "down" ? "text-green-500" : "text-red-500"}>
-                  {mockData.stats.weight.change > 0 ? "+" : ""}{mockData.stats.weight.change} lbs this week
-                </span>
+            <CardContent className="space-y-4">
+              <div className="text-3xl font-display font-bold text-gray-900 dark:text-white">{mockData.stats.weight.current} lbs</div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30">
+                  <TrendingDown className="h-4 w-4 text-green-600 dark:text-green-400" />
+                  <span className="text-sm font-semibold text-green-700 dark:text-green-300">
+                    {mockData.stats.weight.change} lbs this week
+                  </span>
+                </div>
+              </div>
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full" style={{width: '67%'}}></div>
               </div>
             </CardContent>
           </Card>
 
           {/* Sleep Card */}
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Sleep Quality</CardTitle>
-              <Clock className="h-4 w-4 text-muted-foreground" />
+          <Card className="premium-card group">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+              <CardTitle className="text-lg font-display font-semibold text-gray-900 dark:text-white">Sleep Quality</CardTitle>
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-violet-600 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all">
+                <Clock className="h-6 w-6 text-white" />
+              </div>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockData.stats.sleep.hours}h</div>
-              <div className="flex items-center gap-2 text-sm">
-                <Badge variant="secondary">{mockData.stats.sleep.quality}</Badge>
-                <TrendingUp className="h-4 w-4 text-green-500" />
+            <CardContent className="space-y-4">
+              <div className="text-3xl font-display font-bold text-gray-900 dark:text-white">{mockData.stats.sleep.hours}h</div>
+              <div className="flex items-center gap-2">
+                <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 dark:bg-purple-900 dark:text-purple-100">
+                  {mockData.stats.sleep.quality}
+                </Badge>
+                <div className="flex items-center gap-1 text-sm">
+                  <TrendingUp className="h-4 w-4 text-purple-500" />
+                  <span className="text-purple-600 dark:text-purple-400 font-medium">Improving</span>
+                </div>
+              </div>
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div className="bg-gradient-to-r from-purple-500 to-violet-500 h-2 rounded-full" style={{width: '85%'}}></div>
               </div>
             </CardContent>
           </Card>
 
           {/* Compliance Card */}
-          <Card>
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Weekly Compliance</CardTitle>
-              <CheckCircle className="h-4 w-4 text-muted-foreground" />
+          <Card className="premium-card group">
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-4">
+              <CardTitle className="text-lg font-display font-semibold text-gray-900 dark:text-white">Weekly Compliance</CardTitle>
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center shadow-md group-hover:shadow-lg transition-all">
+                <Activity className="h-6 w-6 text-white" />
+              </div>
             </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockData.stats.compliance.percentage}%</div>
-              <div className="flex items-center gap-1 text-sm">
-                <TrendingUp className="h-4 w-4 text-green-500" />
-                <span className="text-green-500">+5% from last week</span>
+            <CardContent className="space-y-4">
+              <div className="text-3xl font-display font-bold text-gray-900 dark:text-white">{mockData.stats.compliance.percentage}%</div>
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1 px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-900/30">
+                  <TrendingUp className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                  <span className="text-sm font-semibold text-blue-700 dark:text-blue-300">+5% from last week</span>
+                </div>
+              </div>
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                <div className="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full" style={{width: '87%'}}></div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Quick Actions */}
-        <Card>
+        {/* Quick Actions - Premium Layout */}
+        <Card className="premium-card bg-gradient-to-r from-gray-50/80 to-white/80 dark:from-gray-800/80 dark:to-gray-900/80">
           <CardHeader>
-            <CardTitle>Quick Actions</CardTitle>
+            <CardTitle className="text-xl font-display font-bold text-gray-900 dark:text-white flex items-center gap-2">
+              <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
+              Quick Actions
+            </CardTitle>
+            <p className="text-gray-600 dark:text-gray-400">Fast-track your health journey</p>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Button className="h-16 flex-col gap-2" variant="outline">
-                <CheckCircle className="h-6 w-6" />
-                <span>Daily Check-In</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <Button className="h-20 flex-col gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl transition-all group">
+                <CheckCircle className="h-7 w-7 group-hover:scale-110 transition-transform" />
+                <span className="font-semibold">Daily Check-In</span>
               </Button>
-              <Button className="h-16 flex-col gap-2" variant="outline">
-                <BookOpen className="h-6 w-6" />
-                <span>My Program</span>
+              <Button variant="outline" className="h-20 flex-col gap-3 border-2 border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950/30 shadow-sm hover:shadow-lg transition-all group">
+                <BookOpen className="h-7 w-7 text-gray-600 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:scale-110 transition-all" />
+                <span className="font-semibold text-gray-700 dark:text-gray-300 group-hover:text-blue-700 dark:group-hover:text-blue-300">My Program</span>
               </Button>
             </div>
           </CardContent>
         </Card>
 
-        {/* Recent Activity */}
-        <Card>
+        {/* Recent Activity - Enhanced */}
+        <Card className="premium-card">
           <CardHeader>
-            <CardTitle>Recent Activity</CardTitle>
+            <CardTitle className="text-xl font-display font-bold text-gray-900 dark:text-white flex items-center gap-2">
+              <div className="w-2 h-8 bg-gradient-to-b from-green-500 to-emerald-600 rounded-full"></div>
+              Recent Activity
+            </CardTitle>
+            <p className="text-gray-600 dark:text-gray-400">Your latest health milestones</p>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               {mockData.recentActivity.map((activity, index) => (
-                <div key={index} className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                  <div className="w-2 h-2 rounded-full bg-primary"></div>
+                <div key={index} className="flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r from-gray-50/50 to-transparent dark:from-gray-800/50 hover:from-blue-50/50 dark:hover:from-blue-950/30 transition-all group">
+                  <div className="w-3 h-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-500 shadow-md group-hover:shadow-lg transition-all"></div>
                   <div className="flex-1">
-                    <p className="text-sm font-medium">{activity.message}</p>
-                    <p className="text-xs text-muted-foreground">{activity.time}</p>
+                    <p className="font-medium text-gray-900 dark:text-white">{activity.message}</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 flex items-center gap-1 mt-1">
+                      <Clock className="w-3 h-3" />
+                      {activity.time}
+                    </p>
+                  </div>
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 flex items-center justify-center opacity-60 group-hover:opacity-100 transition-all">
+                    <Activity className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                   </div>
                 </div>
               ))}

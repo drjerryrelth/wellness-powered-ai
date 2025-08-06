@@ -10,14 +10,18 @@ export default {
 	],
 	prefix: "",
 	theme: {
-		container: {
-			center: true,
-			padding: '2rem',
-			screens: {
-				'2xl': '1400px'
-			}
-		},
 		extend: {
+			fontFamily: {
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'display': ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+			},
+			container: {
+				center: true,
+				padding: '2rem',
+				screens: {
+					'2xl': '1400px'
+				}
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
