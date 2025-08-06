@@ -4,7 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress as ProgressBar } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar, TrendingUp, Target, CheckCircle } from "lucide-react";
+import { CircularProgress } from "@/components/CircularProgress";
+import { Calendar, TrendingUp, Target, CheckCircle, Activity, Sparkles, Heart } from "lucide-react";
+import progressDashboard from "@/assets/progress-dashboard.jpg";
 
 // Mock data - replace with real API calls
 const mockData = {
@@ -32,66 +34,150 @@ export default function Progress() {
   const [timeRange, setTimeRange] = useState("week");
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto p-6 space-y-6">
-        {/* Welcome Header */}
-        <div className="space-y-2">
-          <h1 className="text-3xl font-bold">Welcome back, {mockData.client.name}! 👋</h1>
-          <p className="text-muted-foreground flex items-center gap-2">
-            <Calendar className="w-4 h-4" />
-            Started {mockData.client.startDate} • {mockData.client.daysActive} days active
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/20 dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20">
+      {/* Premium Header Section */}
+      <div className="relative bg-gradient-to-r from-purple-600 via-indigo-700 to-blue-800 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="absolute inset-0 bg-white/5 opacity-20" style={{backgroundImage: "radial-gradient(circle at 50% 50%, white 2px, transparent 2px)", backgroundSize: "60px 60px"}}></div>
+        
+        <div className="relative container mx-auto px-6 py-12">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
+                  <Activity className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
+                    <Sparkles className="w-3 h-3 mr-1" />
+                    Progress Analytics
+                  </Badge>
+                </div>
+              </div>
+              
+              <div className="space-y-3">
+                <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight">
+                  Welcome back, <span className="text-purple-200">{mockData.client.name}</span>! 👋
+                </h1>
+                <p className="text-xl text-purple-100 font-medium">
+                  Your comprehensive wellness journey tracking
+                </p>
+                <p className="text-purple-200 flex items-center gap-2">
+                  <Calendar className="w-4 h-4" />
+                  Started {mockData.client.startDate} • {mockData.client.daysActive} days active
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-400/20 to-blue-400/20 rounded-3xl blur-3xl"></div>
+              <img 
+                src={progressDashboard} 
+                alt="Advanced Progress Dashboard" 
+                className="relative rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm"
+              />
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Compliance</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockData.keyMetrics.compliance.value}%</div>
-              <ProgressBar value={mockData.keyMetrics.compliance.value} className="mt-2" />
-              <p className="text-xs text-muted-foreground mt-1">Target: {mockData.keyMetrics.compliance.target}%</p>
-            </CardContent>
-          </Card>
+      <div className="container mx-auto p-6 space-y-8 -mt-12 relative z-10">
 
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Current Weight</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockData.keyMetrics.currentWeight} lbs</div>
-              <div className="flex items-center gap-1 mt-1">
-                <TrendingUp className="h-4 w-4 text-green-500" />
-                <span className="text-xs text-green-500">-1.8 lbs this week</span>
+        {/* Key Metrics - Premium Circular Progress Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <Card className="premium-card group">
+            <CardContent className="p-6">
+              <div className="flex flex-col items-center space-y-4">
+                <CircularProgress 
+                  value={mockData.keyMetrics.compliance.value} 
+                  size={100}
+                  color="success"
+                >
+                  <div className="text-center">
+                    <div className="text-xl font-bold">{mockData.keyMetrics.compliance.value}%</div>
+                  </div>
+                </CircularProgress>
+                <div className="text-center">
+                  <h3 className="font-display font-semibold text-lg">Compliance</h3>
+                  <p className="text-sm text-muted-foreground">Target: {mockData.keyMetrics.compliance.target}%</p>
+                  <Badge className="mt-2 bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-100">
+                    Excellent
+                  </Badge>
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Goal Weight</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockData.keyMetrics.goalWeight} lbs</div>
-              <div className="flex items-center gap-1 mt-1">
-                <Target className="h-4 w-4 text-primary" />
-                <span className="text-xs text-muted-foreground">
-                  {(mockData.keyMetrics.currentWeight - mockData.keyMetrics.goalWeight).toFixed(1)} lbs to go
-                </span>
+          <Card className="premium-card group">
+            <CardContent className="p-6">
+              <div className="flex flex-col items-center space-y-4">
+                <CircularProgress 
+                  value={75} 
+                  size={100}
+                  color="default"
+                >
+                  <div className="text-center">
+                    <div className="text-xl font-bold">{mockData.keyMetrics.currentWeight}</div>
+                    <div className="text-xs text-muted-foreground">lbs</div>
+                  </div>
+                </CircularProgress>
+                <div className="text-center">
+                  <h3 className="font-display font-semibold text-lg">Current Weight</h3>
+                  <div className="flex items-center gap-1 justify-center mt-1">
+                    <TrendingUp className="h-4 w-4 text-green-500" />
+                    <span className="text-sm text-green-500 font-medium">-1.8 lbs this week</span>
+                  </div>
+                </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Progress</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{mockData.keyMetrics.progressPercentage}%</div>
-              <ProgressBar value={mockData.keyMetrics.progressPercentage} className="mt-2" />
-              <p className="text-xs text-muted-foreground mt-1">Of total goal achieved</p>
+          <Card className="premium-card group">
+            <CardContent className="p-6">
+              <div className="flex flex-col items-center space-y-4">
+                <CircularProgress 
+                  value={100} 
+                  size={100}
+                  color="warning"
+                >
+                  <div className="text-center">
+                    <div className="text-xl font-bold">{mockData.keyMetrics.goalWeight}</div>
+                    <div className="text-xs text-muted-foreground">lbs</div>
+                  </div>
+                </CircularProgress>
+                <div className="text-center">
+                  <h3 className="font-display font-semibold text-lg">Goal Weight</h3>
+                  <div className="flex items-center gap-1 justify-center mt-1">
+                    <Target className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">
+                      {(mockData.keyMetrics.currentWeight - mockData.keyMetrics.goalWeight).toFixed(1)} lbs to go
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="premium-card group">
+            <CardContent className="p-6">
+              <div className="flex flex-col items-center space-y-4">
+                <CircularProgress 
+                  value={mockData.keyMetrics.progressPercentage} 
+                  size={100}
+                  color="success"
+                >
+                  <div className="text-center">
+                    <div className="text-xl font-bold">{mockData.keyMetrics.progressPercentage}%</div>
+                  </div>
+                </CircularProgress>
+                <div className="text-center">
+                  <h3 className="font-display font-semibold text-lg">Progress</h3>
+                  <p className="text-sm text-muted-foreground">Of total goal achieved</p>
+                  <Badge className="mt-2 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-100">
+                    On Track
+                  </Badge>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </div>
@@ -147,66 +233,101 @@ export default function Progress() {
               </CardContent>
             </Card>
 
-            {/* Macro Tracking */}
-            <Card>
+            {/* Macro Tracking - Premium Circular Progress */}
+            <Card className="premium-card">
               <CardHeader>
-                <CardTitle>Today's Macro Breakdown</CardTitle>
+                <CardTitle className="text-xl font-display font-bold flex items-center gap-2">
+                  <div className="w-2 h-8 bg-gradient-to-b from-blue-500 to-indigo-600 rounded-full"></div>
+                  Today's Macro Breakdown
+                </CardTitle>
+                <p className="text-muted-foreground">Real-time nutritional balance analysis</p>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">Protein</span>
-                      <span className="text-sm text-muted-foreground">
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="flex flex-col items-center space-y-3">
+                    <CircularProgress 
+                      value={mockData.macros.protein.percentage} 
+                      size={90}
+                      color="success"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg font-bold">{mockData.macros.protein.percentage}%</div>
+                      </div>
+                    </CircularProgress>
+                    <div className="text-center">
+                      <h4 className="font-semibold">Protein</h4>
+                      <p className="text-sm text-muted-foreground">
                         {mockData.macros.protein.consumed}g / {mockData.macros.protein.target}g
-                      </span>
-                    </div>
-                    <ProgressBar value={mockData.macros.protein.percentage} className="h-2" />
-                    <div className="flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3 text-green-500" />
-                      <span className="text-xs text-green-500">{mockData.macros.protein.percentage}% of target</span>
+                      </p>
+                      <Badge className="mt-1 bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-100">
+                        <CheckCircle className="w-3 h-3 mr-1" />
+                        On Target
+                      </Badge>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">Carbs</span>
-                      <span className="text-sm text-muted-foreground">
+                  <div className="flex flex-col items-center space-y-3">
+                    <CircularProgress 
+                      value={mockData.macros.carbs.percentage} 
+                      size={90}
+                      color="warning"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg font-bold">{mockData.macros.carbs.percentage}%</div>
+                      </div>
+                    </CircularProgress>
+                    <div className="text-center">
+                      <h4 className="font-semibold">Carbs</h4>
+                      <p className="text-sm text-muted-foreground">
                         {mockData.macros.carbs.consumed}g / {mockData.macros.carbs.target}g
-                      </span>
-                    </div>
-                    <ProgressBar value={mockData.macros.carbs.percentage} className="h-2" />
-                    <div className="flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3 text-green-500" />
-                      <span className="text-xs text-green-500">{mockData.macros.carbs.percentage}% of target</span>
+                      </p>
+                      <Badge className="mt-1 bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-100">
+                        Good
+                      </Badge>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">Fats</span>
-                      <span className="text-sm text-muted-foreground">
+                  <div className="flex flex-col items-center space-y-3">
+                    <CircularProgress 
+                      value={mockData.macros.fats.percentage} 
+                      size={90}
+                      color="success"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg font-bold">{mockData.macros.fats.percentage}%</div>
+                      </div>
+                    </CircularProgress>
+                    <div className="text-center">
+                      <h4 className="font-semibold">Fats</h4>
+                      <p className="text-sm text-muted-foreground">
                         {mockData.macros.fats.consumed}g / {mockData.macros.fats.target}g
-                      </span>
-                    </div>
-                    <ProgressBar value={mockData.macros.fats.percentage} className="h-2" />
-                    <div className="flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3 text-green-500" />
-                      <span className="text-xs text-green-500">{mockData.macros.fats.percentage}% of target</span>
+                      </p>
+                      <Badge className="mt-1 bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-100">
+                        <CheckCircle className="w-3 h-3 mr-1" />
+                        Excellent
+                      </Badge>
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm font-medium">Calories</span>
-                      <span className="text-sm text-muted-foreground">
+                  <div className="flex flex-col items-center space-y-3">
+                    <CircularProgress 
+                      value={mockData.macros.calories.percentage} 
+                      size={90}
+                      color="success"
+                    >
+                      <div className="text-center">
+                        <div className="text-lg font-bold">{mockData.macros.calories.percentage}%</div>
+                      </div>
+                    </CircularProgress>
+                    <div className="text-center">
+                      <h4 className="font-semibold">Calories</h4>
+                      <p className="text-sm text-muted-foreground">
                         {mockData.macros.calories.consumed} / {mockData.macros.calories.target}
-                      </span>
-                    </div>
-                    <ProgressBar value={mockData.macros.calories.percentage} className="h-2" />
-                    <div className="flex items-center gap-1">
-                      <CheckCircle className="w-3 h-3 text-green-500" />
-                      <span className="text-xs text-green-500">{mockData.macros.calories.percentage}% of target</span>
+                      </p>
+                      <Badge className="mt-1 bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-100">
+                        <CheckCircle className="w-3 h-3 mr-1" />
+                        Perfect
+                      </Badge>
                     </div>
                   </div>
                 </div>
