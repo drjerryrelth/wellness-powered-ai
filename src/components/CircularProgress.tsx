@@ -21,15 +21,15 @@ export function CircularProgress({
 
   const colorClasses = {
     default: "stroke-primary",
-    success: "stroke-green-500",
-    warning: "stroke-orange-500", 
+    success: "stroke-emerald-500",
+    warning: "stroke-amber-500", 
     destructive: "stroke-red-500"
   };
 
   const backgroundColorClasses = {
-    default: "stroke-primary/20",
-    success: "stroke-green-500/20",
-    warning: "stroke-orange-500/20",
+    default: "stroke-muted/30",
+    success: "stroke-emerald-500/20",
+    warning: "stroke-amber-500/20",
     destructive: "stroke-red-500/20"
   };
 
