@@ -93,64 +93,25 @@ export default function TodaysMeals() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/20 dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20">
-      {/* Premium Header Section with Client Info */}
-      <div className="relative bg-gradient-to-r from-slate-800 via-gray-900 to-slate-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        
-        <div className="relative container mx-auto px-6 py-8">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    Client Dashboard
-                  </Badge>
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                <h1 className="text-3xl md:text-4xl font-display font-bold tracking-tight">
-                  {mockData.client.name}
-                </h1>
-                <p className="text-lg text-gray-300">
-                  {mockData.client.email}
-                </p>
-                <p className="text-gray-400 flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  Last activity: {mockData.client.lastActivity}
-                </p>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                  <ChevronLeft className="w-4 h-4 mr-1" />
-                  May
-                </Button>
-                <div className="text-white font-semibold">
-                  Today • May 6, 2024
-                </div>
-                <Button variant="outline" size="sm" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                  <ChevronRight className="w-4 h-4 ml-1" />
-                </Button>
-              </div>
+      {/* Compact Mobile-Friendly Header */}
+      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-10">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-xl font-display font-bold">{mockData.client.name}</h1>
+              <p className="text-sm text-muted-foreground">Today • May 6, 2024</p>
             </div>
-            
-            <div className="relative">
-              <img 
-                src={aiFoodAnalysis} 
-                alt="Advanced Food Analysis Interface" 
-                className="rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm"
-              />
+            <div className="flex gap-2">
+              <Button size="sm" className="bg-primary hover:bg-primary/90">
+                <Camera className="w-4 h-4 mr-1" />
+                Log Food
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto p-6 space-y-8 -mt-6 relative z-10">
+      <div className="container mx-auto p-4 space-y-6">
 
         {/* Energy and Macro Summary - Cronometer Style */}
         <EnergyMacroSummary 

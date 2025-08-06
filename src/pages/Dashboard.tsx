@@ -25,64 +25,25 @@ const mockData = {
 export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-100/20 dark:from-gray-950 dark:via-blue-950/30 dark:to-indigo-950/20">
-      {/* Premium Header Section */}
-      <div className="relative bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="absolute inset-0 bg-white/5 opacity-20" style={{backgroundImage: "radial-gradient(circle at 50% 50%, white 2px, transparent 2px)", backgroundSize: "60px 60px"}}></div>
-        
-        <div className="relative container mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 backdrop-blur-sm">
-                    <Sparkles className="w-3 h-3 mr-1" />
-                    Enterprise Dashboard
-                  </Badge>
-                </div>
-              </div>
-              
-              <div className="space-y-3">
-                <h1 className="text-4xl md:text-5xl font-display font-bold tracking-tight">
-                  Welcome back, <span className="text-blue-200">Sarah</span>! 👋
-                </h1>
-                <p className="text-xl text-blue-100 font-medium">
-                  Your comprehensive health intelligence platform
-                </p>
-                <p className="text-blue-200 flex items-center gap-2">
-                  <Clock className="w-4 h-4" />
-                  Real-time insights • AI-powered recommendations
-                </p>
-              </div>
-              
-              <div className="flex gap-3">
-                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50 shadow-lg font-semibold">
-                  <CheckCircle className="w-4 h-4 mr-2" />
-                  Quick Check-In
-                </Button>
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-                  <BookOpen className="w-4 h-4 mr-2" />
-                  View Program
-                </Button>
-              </div>
+      {/* Compact Header */}
+      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-xl font-display font-bold">Welcome back, Sarah! 👋</h1>
+              <p className="text-sm text-muted-foreground">Your health dashboard</p>
             </div>
-            
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-3xl blur-3xl"></div>
-              <img 
-                src={nutritionDashboard} 
-                alt="Advanced Healthcare Dashboard" 
-                className="relative rounded-2xl shadow-2xl border border-white/20 backdrop-blur-sm"
-              />
+            <div className="flex gap-2">
+              <Button size="sm">
+                <CheckCircle className="w-4 h-4 mr-1" />
+                Check-In
+              </Button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto p-6 space-y-8 -mt-12 relative z-10">
+      <div className="container mx-auto p-4 space-y-6">
         {/* Daily Motivation - Premium Card */}
         <Card className="premium-card border-l-4 border-l-blue-500 bg-gradient-to-r from-blue-50/80 to-indigo-50/80 dark:from-blue-950/40 dark:to-indigo-950/40">
           <CardContent className="p-8">
