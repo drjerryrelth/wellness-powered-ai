@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 15% 96%;
+    --background: 249 250% 97%;
     --foreground: 210 40% 8%;
 
     --card: 0 0% 100%;
@@ -17,21 +17,24 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 40% 8%;
 
-    --primary: 197 84% 48%;
+    /* CHT Brand Colors: Primary #0DA07A (teal/green) */
+    --primary: 169 91% 35%;
     --primary-foreground: 0 0% 100%;
     
-    --primary-glow: 197 84% 65%;
-    --primary-light: 197 50% 92%;
+    --primary-glow: 169 91% 50%;
+    --primary-light: 169 50% 95%;
 
-    --secondary: 146 67% 54%;
+    /* CHT Brand Colors: Secondary #0B6E99 (blue) */
+    --secondary: 201 82% 32%;
     --secondary-foreground: 0 0% 100%;
     
-    --secondary-light: 146 35% 95%;
+    --secondary-light: 201 50% 95%;
 
-    --accent: 33 93% 54%;
+    /* CHT Accent Color: #F5B700 (golden badge/accent) */
+    --accent: 45 100% 48%;
     --accent-foreground: 0 0% 100%;
     
-    --accent-light: 33 75% 95%;
+    --accent-light: 45 75% 95%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -86,21 +89,24 @@ All colors MUST be HSL.
     --popover: 210 20% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 197 84% 65%;
+    /* CHT Dark Mode: Primary #0DA07A (teal/green) */
+    --primary: 169 91% 50%;
     --primary-foreground: 210 40% 8%;
     
-    --primary-glow: 197 84% 75%;
-    --primary-light: 197 50% 15%;
+    --primary-glow: 169 91% 65%;
+    --primary-light: 169 50% 15%;
 
-    --secondary: 146 67% 64%;
+    /* CHT Dark Mode: Secondary #0B6E99 (blue) */
+    --secondary: 201 82% 45%;
     --secondary-foreground: 210 40% 8%;
     
-    --secondary-light: 146 35% 15%;
+    --secondary-light: 201 50% 15%;
 
-    --accent: 33 93% 64%;
+    /* CHT Dark Mode: Accent #F5B700 (golden) */
+    --accent: 45 100% 55%;
     --accent-foreground: 210 40% 8%;
     
-    --accent-light: 33 75% 15%;
+    --accent-light: 45 75% 15%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
